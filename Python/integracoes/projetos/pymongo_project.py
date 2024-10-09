@@ -74,3 +74,4 @@ cpf_busca = '123456789'
 cliente_encontrado = clientes_collection.find_one({"cpf": cpf_busca})
 if cliente_encontrado:
     print(f"\nCliente encontrado: {cliente_encontrado['nome']}, Endereço: {cliente_encontrado['endereco']}")
+

@@ -67,3 +67,4 @@ contas = session.query(Conta).all()
 for conta in contas:
     print(
         f"Conta ID: {conta.id}, Tipo: {conta.tipo}, Agência: {conta.agencia}, Saldo: R$ {conta.saldo}, Cliente: {conta.cliente.nome}")
+
