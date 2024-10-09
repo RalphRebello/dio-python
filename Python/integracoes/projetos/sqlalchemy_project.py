@@ -65,6 +65,6 @@ for conta in cliente.contas:
 # Recuperando informações de todas as contas
 contas = session.query(Conta).all()
 for conta in contas:
-    print(
-        f"Conta ID: {conta.id}, Tipo: {conta.tipo}, Agência: {conta.agencia}, Saldo: R$ {conta.saldo}, Cliente: {conta.cliente.nome}")
+    print(f"Conta ID: {conta.id}, Tipo: {conta.tipo}, Agência: {conta.agencia}, "
+          f"Saldo: R$ {conta.saldo}, Cliente: {conta.cliente.nome}")
 

@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 
+
 # URL de conexão do MongoDB Atlas (substitua com sua própria URI)
 # Obtenha isso no painel do MongoDB Atlas
 MONGO_URI = "mongodb+srv://<usuário>:<senha>@cluster0.mongodb.net/test?retryWrites=true&w=majority"
@@ -21,11 +22,13 @@ cliente1 = {
     "endereco": "Rua A"
 }
 
+
 cliente2 = {
     "nome": "Maria Oliveira",
     "cpf": "987654321",
     "endereco": "Rua B"
 }
+
 
 # Inserir clientes
 clientes_collection.insert_many([cliente1, cliente2])
@@ -43,6 +46,7 @@ conta1 = {
     "id_cliente": joao["_id"]
 }
 
+
 conta2 = {
     "tipo": "Poupança",
     "agencia": "002",
@@ -50,6 +54,7 @@ conta2 = {
     "saldo": 3000.00,
     "id_cliente": maria["_id"]
 }
+
 
 # Inserir contas
 contas_collection.insert_many([conta1, conta2])
@@ -62,12 +67,14 @@ print("Clientes:")
 for cliente in clientes:
     print(f"Nome: {cliente['nome']}, CPF: {cliente['cpf']}, Endereço: {cliente['endereco']}")
 
+
 # Listar todas as contas e os respectivos clientes
 contas = contas_collection.find()
 print("\nContas:")
 for conta in contas:
     cliente = clientes_collection.find_one({"_id": conta['id_cliente']})
     print(f"Conta {conta['num']} do cliente {cliente['nome']}, Agência: {conta['agencia']}, Saldo: {conta['saldo']}")
+
 
 # Buscar cliente específico pelo CPF
 cpf_busca = '123456789'
