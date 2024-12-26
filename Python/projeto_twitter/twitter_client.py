@@ -8,3 +8,4 @@ class TwitterClient:
 
     def search_tweets(self, query, count=100, lang="pt"):
         return self.api.search_tweets(q=query, count=count, lang=lang)
+
